@@ -32,7 +32,7 @@ import com.example.myapplication.R
 @Composable
 fun FormIsian(
     jenisK:List<String> = listOf("Laki-laki", "Perempuan"),
-    onSubmitBtnClick: () -> Unit
+    OnSubmitBtnClick: () -> Unit
 ){
     Scaffold (modifier=Modifier,
         topBar = {
@@ -89,7 +89,7 @@ fun FormIsian(
             Button(
                 modifier =Modifier.fillMaxWidth(fraction=1f)
                     .padding(all = 25.dp),
-                onClick = onSubmitBtnClick
+                onClick = OnSubmitBtnClick
             ){
                 Text(text = stringResource(id = R.string.submit))
             }
