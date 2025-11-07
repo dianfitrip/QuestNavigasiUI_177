@@ -2,7 +2,7 @@ package com.example.myapplication.view
 
 import androidx.compose.ui.Modifier
 
-@OptIn(markerClass = ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun FormIsian(
     jenisK:List<String> = listOf("Laki-laki", "Perempuan"),
