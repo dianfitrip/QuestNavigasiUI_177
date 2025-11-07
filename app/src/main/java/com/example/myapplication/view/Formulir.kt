@@ -63,7 +63,7 @@ fun FormIsian(
                 jenisK.forEach{
                     item->
                     Row(verticalAlignment = Alignment.CenterVertically){
-                        RdioButtom(
+                        RadioButton(
                             selected = false,
                             onClick = {item}
                         )
@@ -97,8 +97,4 @@ fun FormIsian(
     }
 }
 
-@Composable
-fun RdioButtom(selected: Boolean, onClick: () -> String) {
-    TODO("Not yet implemented")
-}
 
