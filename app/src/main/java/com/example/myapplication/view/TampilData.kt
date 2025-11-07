@@ -1,42 +1,24 @@
 package com.example.myapplication.view
 
 
-enum class Navigasi {
-    Formulirku,
-    Detail
-}
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DataApp(
-    navController: NavHostController = rememberNavController()
+fun TampilData(
+    onBackBtnClick:()->Unit
 ){
-    Scaffold { isiRuang ->
-        NavHost(
-            navController = navController,
-            startDestination = Navigasi.Formulirku.name,
-            modifier = Modifier.padding(paddingValues = isiRuang)
-        ) {
-            composable(route = Navigasi.Formulirku.name) {
-                FormisPian(
-                    //pilihanJK = JenisK.map { id -> konteks.resources.getString(id) },
-                    OnSubmitBtnClick = {
-                        navController.navigate(route = Navigasi.Detail.name)
-                    }
-                )
-            }
-            composable(route = Navigasi.Detail.name) {
-                TampilData(
-                    onBackBtnClick = {
-                        cancelAndBackToFormulir(navController)
-                    }
-                )
-            }
+    val items = listOf(
+        Pair(first = stringResource(id = R.string.nama_lengkap), second = "Contoh Nama"),
+        Pair(first = stringResource(id = R.string.jenis_kelamin), second = "Lainnya"),
+        Pair(first = stringResource(id = R.string.alamat), second = "Yogyakarta")
+    )
+    Scaffold(
+        modifier = Modifier,
+        topBar = {
+            TopAppBar(
+                title = { Text(text = stringResource(id = R.string.tampil), color = Color.White) },
+                colors = TopAppBarDefaults.mediumTopAppBarColors(containerColor = colorResource(id = R.color.teal_700))
+            )
         }
-    }
-}
-
-private fun cancelAndBackToFormulir(
-    navController: NavHostController
-) {
-    navController.popBackStack(route = Navigasi.Formulirku.name, inclusive = false)
+    )
 }
