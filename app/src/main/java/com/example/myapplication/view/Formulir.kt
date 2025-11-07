@@ -59,6 +59,7 @@ fun FormIsian(
                 label = {Text(text = "Alamat")},
                 onValueChange ={},
             )
+            Spacer(mmodifier = Modifier.height(height = 30.dp))
         }
     }
 }
