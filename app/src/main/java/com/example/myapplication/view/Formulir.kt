@@ -2,7 +2,7 @@ package com.example.myapplication.view
 
 import androidx.compose.ui.Modifier
 
-
+@OptIn(markerClass = ExperimentalMaterial3Api::class)
 @Composable
 fun FormIsian(
     jenisK:List<String> = listOf("Laki-laki", "Perempuan"),
@@ -33,7 +33,18 @@ fun FormIsian(
             HorizontalDivider(modifier = Modifier
                 .padding(all = 20.dp)
                 .width(width = 250.dp), thickness = Thickness,color = Color.Red)
-
+            Row{
+                jenisK.forEach{
+                    item->
+                    Row(verticalAlignment = Alignment.CenterVertically){
+                        RdioButtom(
+                            selected = false,
+                            onClick = {item}
+                        )
+                        Text(text = item)
+                    }
+                }
+            }
         }
     }
 }
