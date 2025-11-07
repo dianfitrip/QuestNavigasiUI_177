@@ -1,6 +1,32 @@
 package com.example.myapplication.view
 
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.material3.Button
+import androidx.compose.material3.DividerDefaults.Thickness
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.RadioButton
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
+import com.example.myapplication.R
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -13,7 +39,7 @@ fun FormIsian(
             TopAppBar(
                 title = {Text(text = stringResource(id=R.string.home), color = Color.White)},
                 colors = TopAppBarDefaults.mediumTopAppBarColors(
-                    containerColor = colorResource(id = R.color.real_700)
+                    containerColor = colorResource(id = R.color.teal_700)
                 )
             )
         }
@@ -25,7 +51,7 @@ fun FormIsian(
                 value = "",
                 singleLine = true,
                 modifier = Modifier
-                    .padding(tp = 20.dp)
+                    .padding(top = 20.dp)
                     .width(width = 250.dp),
                 label= {Text(text = "Nama Lengkap")},
                 onValueChange = {},
@@ -54,19 +80,25 @@ fun FormIsian(
             OutlinedTextField(
                 value = "",
                 singleLine = true,
-                modfier = Modifier
+                modifier = Modifier
                     .width(width = 250.dp),
                 label = {Text(text = "Alamat")},
-                onValueChange ={},
+                onValueChange = {},
             )
-            Spacer(mmodifier = Modifier.height(height = 30.dp))
+            Spacer(modifier = Modifier.height(height = 30.dp))
             Button(
                 modifier =Modifier.fillMaxWidth(fraction=1f)
                     .padding(all = 25.dp),
-                onClick = OnSubmitBtnClick
+                onClick = onSubmitBtnClick
             ){
                 Text(text = stringResource(id = R.string.submit))
             }
         }
     }
 }
+
+@Composable
+fun RdioButtom(selected: Boolean, onClick: () -> String) {
+    TODO("Not yet implemented")
+}
+
